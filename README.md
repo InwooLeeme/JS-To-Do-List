@@ -4,7 +4,7 @@ Make a to do list using vanilla javascript.
 
 # To Do
 
-- [ ] HTML Form(Form, input)
+- [x] HTML Form(Form, input)
 - [ ] Styling
 - [ ] JS : Event PreventDefault.
 - [ ] JS : Get Input text.
@@ -13,7 +13,7 @@ Make a to do list using vanilla javascript.
 
 # Work Flow
 
-- [ ] HTML Form(Form, input)
+- [x] HTML Form(Form, input)
 - [ ] Styling
 - [ ] JS : Event PreventDefault.
 - [ ] JS : Get Input text.
