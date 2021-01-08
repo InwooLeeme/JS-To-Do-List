@@ -2,7 +2,7 @@ const container = document.querySelector('.container');
 const form = document.querySelector('.jsForm');
 const input = document.querySelector('input');
 const ul = document.querySelector('ul');
-
+const toDoNumber = document.querySelector('.displayNumber');
 let toDos = [];
 
 function handleSubmit(event){
@@ -18,26 +18,33 @@ function createText(text){
     const textSpan = document.createElement('span');
     delBtn.innerHTML = `<i class="fas fa-check-square"></i>`;
     delBtn.addEventListener('click', deleteToDos);
-    li.id = toDos.length + 1;
     textSpan.innerHTML = text;
     textSpan.classList.add(toDos.length + 1);
     textSpan.addEventListener('click',hideText);
     ul.appendChild(li);
     li.appendChild(delBtn);
     li.appendChild(textSpan);
-    toDos.push(text);
+    const toDoObj = {
+        id : toDos.length + 1,
+        text : text
+    }
+    li.id = toDoObj.id;
+    toDos.push(toDoObj);
+    toDoNumber.innerHTML = `${toDos.length} items`;
+}
+
+
+function deleteToDos(event){
+    const li = event.target.parentNode.parentNode;
+    ul.removeChild(li);
+    toDos.splice(parseInt(li.id -1), 1);
+    toDoNumber.innerHTML = `${toDos.length} items`;
 }
 
 function hideText(event){
     const currentTarget = event.target;
     currentTarget.classList.add('hideText');
 }
-
-function deleteToDos(event){
-    const li = event.target.parentNode.parentNode;
-    ul.removeChild(li);
-}
-
 function init(){
     form.addEventListener('submit',handleSubmit);
 }
