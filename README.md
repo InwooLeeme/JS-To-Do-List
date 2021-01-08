@@ -10,7 +10,7 @@ Make a to do list using vanilla javascript.
 - [x] JS : Get Input text.
 - [x] JS : CREATE li element.
 - [x] JS : CREATE delete button.
-- [ ] JS : Delelte to dos
+- [x] JS : Delelte to dos
 - [x] JS : Hide Text
 
 # Work Flow
@@ -21,5 +21,5 @@ Make a to do list using vanilla javascript.
 - [x] JS : Get Input text.
 - [x] JS : CREATE li element.
 - [x] JS : CREATE delete button.
-- [ ] JS : Delelte to dos
+- [x] JS : Delelte to dos
 - [x] JS : Hide Text

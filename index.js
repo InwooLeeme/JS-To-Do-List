@@ -13,11 +13,12 @@ function handleSubmit(event){
 }
 
 function createText(text){
-    const delBtn = document.createElement('button');
+    const delBtn = document.createElement('span');
     const li = document.createElement('li');
     const textSpan = document.createElement('span');
     delBtn.innerHTML = `<i class="fas fa-check-square"></i>`;
-    delBtn.id = toDos.length + 1;
+    delBtn.addEventListener('click', deleteToDos);
+    li.id = toDos.length + 1;
     textSpan.innerHTML = text;
     textSpan.classList.add(toDos.length + 1);
     textSpan.addEventListener('click',hideText);
@@ -32,10 +33,13 @@ function hideText(event){
     currentTarget.classList.add('hideText');
 }
 
+function deleteToDos(event){
+    const li = event.target.parentNode.parentNode;
+    ul.removeChild(li);
+}
 
 function init(){
     form.addEventListener('submit',handleSubmit);
 }
-
 
 init();
